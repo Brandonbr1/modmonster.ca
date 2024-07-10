@@ -3,10 +3,12 @@
 
 <head>
   <style>
+    /** sets Mod's hero section **/
     .mod-img {
       background-image: url();
     }
 
+    /** Chnages the colour of the when selecting text to a different one. **/
     ::selection {
       background: rgba(255, 141, 35, 1);
     }
@@ -28,7 +30,7 @@
 </head>
 
 <body>
-  <div class="text-center mod-img">
+  <div class="text-center mt-52 mod-img">
     <h1 class="text-6xl font-extrabold text-purple-900 shadow-1xl ">Mod Monster</h1>
 
     <p class="pt-4 pb-8 text-lg text-center end-32">
@@ -38,34 +40,95 @@
     <button class="px-4 py-2 mb-32 font-bold text-white bg-blue-700 rounded-xl m-b-12 hover:bg-purple-700"><a
         href="#abt-me">Nerd
         Info here</a></button>
+  </div>
 
 
+  <section class="bg-gray-100" id="abt-me">
     <div class="flex py-2 content">
-      <img class="w-96 h-96" src="./main_hopeage_img/logo.png" alt="">
+      <img class="w-96 h-96" src="./main_hopeage_img/logo.webp" alt="" loading="lazy">
       <div class="px-2 item-body ">
-        <h1 class="text-2xl font-bold text-orange-700"> About me</h1>
-        <p class="ml-10 text-lg break-words mt-10per">Hi there I'm nick, but I go by ModMonster online. I
+        <h1 class="text-2xl font-bold text-center text-orange-700"> About me</h1>
+        <p class="w-4/6 ml-6 text-lg break-words mt-10per">Hi there I'm nick, but I go by ModMonster online. I
           mainly develop half-working,
           half-baked Minecraft Mods in front of my viewers to get views</p>
-          <p>Sometimes I do this by coding and sometimes I just use Mcreator</p>
+        <p class="w-4/6 ml-10 text-lg break-words ">Sometimes I do this by coding and sometimes I just use Mcreator
+        </p>
       </div>
     </div>
+  </section>
 
-    <br><br><br><br><br><br><br><br>
+  <section class="pb-32 bg-gray-100 mt-36" id="socials">
+    <h1 class="text-2xl font-bold text-center text-orange-700">My socials </h1>
 
-    <section id="socials">
-      <h1 class="text-xl">My socials </h1>
-
-
-    </section>
-
+    <!--Start fiv frid-->
+    <div class="grid grid-cols-3 grid-rows-2 gap-3 ">
 
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <footer class="bg-black">
-      <p class="italic text-white ">Copyright 2024 ModMonster. All rights reserved. <a
-          href="./main_hopeage_img/scarycopyright.png"> Copy or modmonsterslawyer will come after you</a></p>
-    </footer>
+       <!-- Start Card 1 -->
+      <div class="max-w-sm overflow-hidden rounded shadow-lg">
+        <img class="w-full" src="./main_hopeage_img/mod_channel_banner.jpg" alt="Image of Mod's channel banner" loading="lazy">
+        <div class="px-6 py-4">
+          <a href="http://">
+          <div class="mb-2 text-xl font-bold">Youtube</div>
+          <p class="text-base text-gray-700">
+            This is where I sometimes post youtube videos and do my livestream every Monday.
+            I also have some old tutorials I made for Mcreator if you want to check that out.
+          
+          </p>
+        </div>
+      </a>
+      </div>
+      <!-- End Card 1 -->
+
+       <!-- Start Card 2 -->
+      <div class="max-w-sm overflow-hidden rounded shadow-lg">
+        <img class="w-full" src="./main_hopeage_img/twitter_card_s.png" alt="Mod's twitter post" loading="lazy">
+        <div class="px-6 py-4">
+          <div class="mb-2 text-xl font-bold">Twitter</div>
+          <p class="text-base text-gray-700">
+            I'm not active on there, sometimes I tweet when I feel like.
+          </p>
+        </div>
+      </div>
+       <!-- End Card 2 -->
+
+       <!-- Start Card 3 -->
+      <div class="max-w-sm overflow-hidden rounded shadow-lg">
+        <img class="w-full" src="./main_hopeage_img/discord_card_s.png" alt="Mod's invite server page" loading="lazy">
+        <div class="px-6 py-4">
+          <div class="mb-2 text-xl font-bold">Discord</div>
+          <p class="text-base text-gray-700">
+            You can talk on it, you can type on it. Its a discord server. Sometimes I come along and chat.
+          </p>
+        </div>
+      </div>
+       <!-- End Card 3 -->
+
+      <!-- Start Card 4 -->
+      <div class="max-w-sm overflow-hidden rounded shadow-lg">
+        <img class="w-full" src="./main_hopeage_img/twitch_card_social.webp" alt="Sunset in the mountains" loading="lazy">
+        <div class="px-6 py-4">
+          <div class="mb-2 text-xl font-bold">Twitch</div>
+          <p class="text-base text-gray-700">
+            Its alive, I think.
+          </p>
+        </div>
+      </div>
+       <!-- End Card 4 -->
+
+
+      <!--- The end of this div -->
+    </div>
+  </section>
+
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <footer class="bg-black">
+    <p class="italic text-white ">Copyright 2024 ModMonster. All rights reserved. <a
+        class="text-blue-600 dark:text-blue-400 hover:underline" href="./main_hopeage_img/scarycopyright.png"> Copy or
+        modmonsterslawyer will come after you</a></p>
+  </footer>
 
 </body>
 
