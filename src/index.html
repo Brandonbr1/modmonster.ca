@@ -3,20 +3,14 @@
 
 <head>
   <style>
-    /** sets Mod's hero section **/
-    .mod-img {
-      background-image: url('./main_hopeage_img/hero_img.jpg');
-    }
-
     /** Chnages the colour of the when selecting text to a different one. **/
     ::selection {
       background: rgba(255, 141, 35, 1);
+      color: red;
     }
-
     .mt-10per {
       margin-top: 10%;
     }
-
     html {
       scroll-behavior: smooth;
     }
@@ -54,7 +48,7 @@
               d="M1 1h15M1 7h15M1 13h15" />
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="nav-bars" >
+        <div class="hidden w-full md:block md:w-auto" id="nav-bars">
           <ul
             class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
@@ -84,7 +78,7 @@
       <!-- End navbar-->
     </nav>
 
-  <div class="text-center bg-cover mod-img pb-72 pt-72">
+  <div class="inset-0 object-cover object-center text-center bg-fixed bg-cover pb-72 pt-72" style="background-image: url(./main_hopeage_img/hero_img.jpg);">
     <h1 class="inset-0 text-6xl font-extrabold text-transparent shadow-1xl shadow-white bg-gradient-to-t from-amber-300 to-orange-600 bg-clip-text">Mod Monster</h1>
 
     <p class="pt-4 pb-8 text-lg text-center text-white ">
@@ -98,7 +92,7 @@
   </div>
 
 
-  <section class="mt-56 bg-gray-100" id="abt-me">
+  <section class="mt-56 bg-gray-100 " id="abt-me">
     <div class="flex py-2 content">
       <picture>
         <img class="w-96 h-96 ps-14" src="./main_hopeage_img/logo.webp" alt="" loading="lazy" decoding="async">
