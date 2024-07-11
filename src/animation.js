@@ -1,3 +1,6 @@
+/*
+============================ Animations ===================
+*/
 const targets = document.querySelectorAll(".js-show-on-scroll");
 
 const observer = new IntersectionObserver((entries) => {
@@ -17,4 +20,3 @@ targets.forEach((el) => {
     el.classList.add("opacity-0");
     observer.observe(el);
 });
-

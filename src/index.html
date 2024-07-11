@@ -8,9 +8,11 @@
       background: rgba(255, 141, 35, 1);
       color: red;
     }
+
     .mt-10per {
       margin-top: 10%;
     }
+
     html {
       scroll-behavior: smooth;
     }
@@ -32,60 +34,63 @@
 </head>
 
 <body>
-    <nav class="bg-white border-gray-200 dark:bg-gray-900">
-      <!-- Start navbar-->
-      <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="./main_hopeage_img/logo.webp" class="h-8" alt="Mod's logo"  loading="eager" decoding="async"/>
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ModMonster</span>
-        </a>
-        <button data-collapse-toggle="navbar-default" type="button"
-          class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default" aria-expanded="false" onclick="CheckNav()">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15" />
-          </svg>
-        </button>
-        <div class="hidden w-full md:block md:w-auto" id="nav-bars">
-          <ul
-            class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a href="/"
-                class="block px-3 py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                aria-current="page">Home</a>
-            </li>
-            <li>
-              <a href="#abt-me"
-                class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-            </li>
-            <li>
-              <a href="#socials"
-                class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Socials</a>
-            </li>
-            <li>
-              <a href="#points"
-                class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Points</a>
-            </li>
-            <li>
-              <a href="#"
-                class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-            </li>
-          </ul>
-        </div>
+  <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <!-- Start navbar-->
+    <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="./main_hopeage_img/logo.webp" class="h-8" alt="Mod's logo" loading="eager" decoding="async" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ModMonster</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false" onclick="CheckNav()">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="nav-bars">
+        <ul
+          class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/"
+              class="block px-3 py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+              aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="#abt-me"
+              class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+          </li>
+          <li>
+            <a href="#socials"
+              class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Socials</a>
+          </li>
+          <li>
+            <a href="#points"
+              class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Points</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li>
+        </ul>
       </div>
-      <!-- End navbar-->
-    </nav>
+    </div>
+    <!-- End navbar-->
+  </nav>
 
-  <div class="inset-0 object-cover object-center text-center bg-fixed bg-cover pb-72 pt-72" style="background-image: url(./main_hopeage_img/hero_img.jpg);">
-    <h1 class="inset-0 text-6xl font-extrabold text-transparent shadow-1xl shadow-white bg-gradient-to-t from-amber-300 to-orange-600 bg-clip-text">Mod Monster</h1>
+  <div class="inset-0 object-cover object-center text-center bg-fixed bg-center bg-no-repeat bg-cover pb-72 pt-72"
+    style="background-image: url(./main_hopeage_img/hero_img.jpg);" id="parallax">
+    <h1
+      class="inset-0 text-6xl font-extrabold text-transparent bg-gradient-to-t from-amber-300 to-orange-600 bg-clip-text" id="mmparahero">
+      Mod Monster</h1>
 
-    <p class="pt-4 pb-8 text-lg text-center text-white ">
+    <p class="pt-4 pb-8 text-lg text-center text-white" id="herotxtdescpara">
       I'm Nick but I try to go by ModMonster. I try to make passable mods<i>(impossible)</i>.
     </p>
 
-    <button
+    <button id="herobtnpara"
       class="py-4 mb-32 font-bold text-white transition-all bg-blue-700 px-14 rounded-xl m-b-12 hover:bg-purple-700 hover:scale-150"><a
         href="#abt-me">Nerd
         Info here</a></button>
@@ -239,29 +244,39 @@
 </body>
 
 <script defer>
+  //opens navbar
   function OpenNavBar() {
     const element = document.getElementById("nav-bars");
     element.classList.remove("hidden");  // Remove mystyle class
     element.classList.add("block");  // Add newone class
   }
-
+  // Closes navbar
   function CloseNavBar() {
     const element = document.getElementById("nav-bars");
     element.classList.add("hidden");  // Remove mystyle class
     element.classList.remove("block");  // Add newone class
   }
-
+  // checks if Nav bar is open, if it is, close it and viceversa
   function CheckNav() {
     const element = document.getElementById("nav-bars");
-    if (element.classList.contains("hidden") ) {
+    if (element.classList.contains("hidden")) {
       OpenNavBar()
     } else {
       CloseNavBar()
     }
   }
 
-
-
+  let HerodescText = document.getElementById('herotxtdescpara');
+  let HeroButton = document.getElementById('herobtnpara'); // Hero section Button
+  let HeroMainText = document.getElementById('mmparahero');
+  
+  window.addEventListener('scroll', function () {
+    let value = window.scrollY;
+    HeroMainText.style.marginBottom = value * 0.4 + 'px';
+    HerodescText.style.marginTop = value * 0.2 + 'px';
+    HeroButton.style.marginLeft = value * 0.100 + 'px';
+    HeroButton.style.marginTop = value * 0.01222 + 'px';
+  })
 
 </script>
 
