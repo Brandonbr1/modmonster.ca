@@ -600,20 +600,8 @@ video {
   border-width: 0;
 }
 
-.fixed {
-  position: fixed;
-}
-
-.sticky {
-  position: sticky;
-}
-
 .inset-0 {
   inset: 0px;
-}
-
-.z-10 {
-  z-index: 10;
 }
 
 .float-right {
@@ -677,10 +665,6 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mt-56 {
-  margin-top: 14rem;
 }
 
 .block {
