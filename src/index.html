@@ -8,12 +8,16 @@
       background: rgba(255, 141, 35, 1);
       color: red;
     }
+
     .mt-10per {
       margin-top: 10%;
     }
 
     html {
       scroll-behavior: smooth;
+    }
+    .hero-mod {
+      background-image: url('./main_hopeage_img/hero_img.jpg');
     }
   </style>
   <!-- Meta tags -->
@@ -35,12 +39,27 @@
 <body>
   <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <!-- Start navbar-->
-     
+
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
 
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
 
-        <img src="./main_hopeage_img/small/logo_300.png" class="h-8" alt="Mod's logo" loading="eager" decoding="async" />
+        <picture>
+
+          <source class="w-8 h-8" type="image" srcset="
+          ./main_hopeage_img/small/logo_300.png 300w," type="image/png" alt="Mod's logo" loading="eager"
+            decoding="async" sizes="(max-width: 640px) 400px,
+            800px">
+
+          <source class="w-8 h-8" type="image" srcset="
+            ./main_hopeage_img/small/logo_300_webp.webp 300w," type="image/webp" alt="Mod's logo" loading="eager"
+            decoding="async" sizes="(max-width: 640px) 400px,
+              800px">
+
+          <img src="./main_hopeage_img/small/logo_300.png" class="w-8 h-8" alt="Mod's logo" loading="eager"
+            decoding="async" />
+
+        </picture>
 
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ModMonster</span>
 
@@ -48,7 +67,6 @@
 
       <button data-collapse-toggle="navbar-default" type="button"
         class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-
         aria-controls="navbar-default" aria-expanded="false" onclick="CheckNav()">
 
         <span class="sr-only">Open main menu</span>
@@ -105,8 +123,8 @@
     <!-- End navbar-->
   </nav>
 
-  <div class="inset-0 object-cover object-center text-center bg-fixed bg-center bg-no-repeat bg-cover pb-72 pt-72"
-    style="background-image: url(./main_hopeage_img/hero_img.jpg);" id="parallax">
+    <header>
+  <div class="inset-0 object-cover object-center text-center bg-fixed bg-center bg-no-repeat bg-cover pb-72 pt-72 hero-mod" id="parallax" style="perspective: 100px;">
 
     <h1
       class="inset-0 text-6xl font-extrabold text-transparent bg-gradient-to-t from-amber-300 to-orange-600 bg-clip-text"
@@ -122,6 +140,8 @@
         href="#abt-me">Nerd
         Info here</a></button>
   </div>
+  </header>
+</div>
 
 
   <section class="bg-gray-100 " id="abt-me">
@@ -130,7 +150,7 @@
 
       <picture>
 
-        <source class="w-96 h-96" type="image" srcset="./main_hopeage_img/logo.webp 800w, 
+        <source class="w-96 h-96 md:w-48 md:h-48 sm:w-24 sm:h-24" type="image" srcset="./main_hopeage_img/logo.webp 800w, 
           ./main_hopeage_img/small/logo_500webp.webp 500w,
           ./main_hopeage_img/small/logo_300webp.webp 300w,
           " type="image/webp" alt="Mod's logo" loading="lazy" decoding="async" sizes="(max-width: 640px) 250px,
@@ -138,7 +158,7 @@
         <!--End webp load-->
 
 
-        <source class="w-96 h-96" type="image" srcset="./main_hopeage_img/logo.png 800w,
+        <source class="w-96 h-96 md:w-48 md:h-48 sm:w-24 sm:h-24" type="image" srcset="./main_hopeage_img/logo.png 800w,
         ./main_hopeage_img/small/logo_500.png 500w,
         ./main_hopeage_img/small/logo_300.png 300w,
         
@@ -148,7 +168,7 @@
         <!--Load highest quallity image for 800w 500w and 300w screen sizes-->
         <!--End png load-->
 
-        <img class="w-96 h-96" srcset="
+        <img class="w-96 h-96 md:w-48 md:h-48 sm:w-24 sm:h-24" srcset="
         ./main_hopeage_img/logo.png 800w, 
         ./main_hopeage_img/small/logo_500.png 500w,
         ./main_hopeage_img//small/logo_300.png 300w,
@@ -189,12 +209,13 @@
 
       <!-- Start Card 1 -->
       <div
-        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200" aria-hidden="false">
+        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200"
+        aria-hidden="false">
 
         <a href="https://www.youtube.com/@ModMonster">
 
           <img class="w-full h-2/5" src="./main_hopeage_img/mod_channel_banner.jpg" alt="Image of Mod's channel banner"
-          loading="lazy" decoding="async" aria-hidden="false">
+            loading="lazy" decoding="async" aria-hidden="false">
 
           <div class="px-6 py-4">
 
@@ -216,7 +237,8 @@
 
       <!-- Start Card 2 -->
       <div
-        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200" aria-hidden="false">
+        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200"
+        aria-hidden="false">
 
         <a href="https://x.com/modmonster2060" aria-hidden="false">
 
@@ -242,7 +264,8 @@
 
       <!-- Start Card 3 -->
       <div
-        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200" aria-hidden="false">
+        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200"
+        aria-hidden="false">
 
         <a href="https://discord.com/invite/45tjuM8" aria-hidden="false">
 
@@ -268,7 +291,8 @@
 
       <!-- Start Card 4 -->
       <div
-        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200" aria-hidden="false">
+        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200"
+        aria-hidden="false">
 
         <a href="https://www.twitch.tv/modmonster2060" aria-hidden="false">
 
@@ -293,7 +317,8 @@
 
       <!-- Start Card 5 -->
       <div
-        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200" aria-hidden="false">
+        class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200"
+        aria-hidden="false">
 
         <a href="https://www.twitch.tv/modmonster2060" aria-hidden="false">
 
@@ -325,7 +350,8 @@
   <br><br>
 
   <section class="container items-center min-w-full text-center bg-gray-200" id="points" aria-hidden="false">
-    <div class="table ml-auto mr-auto origin-center border-4 border-neutral-950 border-spacing-12 border-spacing-x-96" aria-hidden="false">
+    <div class="table ml-auto mr-auto origin-center border-4 border-neutral-950 border-spacing-12 border-spacing-x-96 md:border-spacing-x-0 md:border-spacing-4 md:border-3 sm:border-spacing-0 sm:border-spacing-x-1 sm:border-2"
+      aria-hidden="false">
       <h2 class="pb-20 text-4xl font-bold text-amber-500" aria-hidden="false"> Mod's Point System</h2>
 
       <h2 class="text-2xl font-bold text-orange-500" aria-hidden="false">What does this sysytem do?</h2>
@@ -337,8 +363,8 @@
       </div>
 
       <button
-        class="px-4 py-2 mt-12 mb-32 font-bold text-center text-white transition-all bg-blue-700 rounded-xl m-b-12 hover:bg-purple-700 hover:scale-150" aria-hidden="false"><a
-          href="./points/index.html">See the points page</a></button>
+        class="px-4 py-2 mt-12 mb-32 font-bold text-center text-white transition-all bg-blue-700 rounded-xl m-b-12 hover:bg-purple-700 hover:scale-150"
+        aria-hidden="false"><a href="./points/index.html">See the points page</a></button>
     </div>
 
   </section>
@@ -350,7 +376,8 @@
 
     <p class="italic text-white " aria-hidden="false">Copyright
       <script defer> var cd = new Date().getFullYear(); document.write(cd); </script> ModMonster. All rights reserved.
-      <a aria-hidden="false" class="text-blue-600 dark:text-blue-400 hover:underline" href="./main_hopeage_img/scarycopyright.png"> Copy or
+      <a aria-hidden="false" class="text-blue-600 dark:text-blue-400 hover:underline"
+        href="./main_hopeage_img/scarycopyright.png"> Copy or
         modmonsterslawyer will come after you</a>
 
     </p>
@@ -382,31 +409,6 @@
       CloseNavBar()
     }
   }
-
-
-  let HerodescText = document.getElementById('herotxtdescpara');
-  let HeroButton = document.getElementById('herobtnpara'); // Hero section Button
-  let HeroMainText = document.getElementById('mmparahero');
-  const IsPortableDevive = /iPhone|iPad|iPod|Android|Kindle/i.test(navigator.userAgent);
-
-  window.addEventListener('scroll', function () {
-    let value = window.scrollY;
-    HeroMainText.style.marginBottom = value * 0.4 + 'px';
-    HerodescText.style.marginTop = value * 0.2 + 'px';
-    HeroButton.style.marginLeft = value * 0.100 + 'px';
-    HeroButton.style.marginTop = value * 0.01222 + 'px';
-
-
-    // Disable Parallax for Mobile
-    if (IsPortableDevive) {
-    HeroMainText.style.marginBottom = value * 0 + 'px';
-    HerodescText.style.marginTop = value * 0 + 'px';
-    HeroButton.style.marginLeft = value * 0 + 'px';
-    HeroButton.style.marginTop = value * 0 + 'px';
-  }
-  
-  })
-
 </script>
 
 </html>
