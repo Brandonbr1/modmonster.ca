@@ -101,23 +101,29 @@
   <section class="bg-gray-100 " id="abt-me">
     <div class="flex py-2 content">
       <picture>
-        <source class="w-96 h-96 ps-14" type="image" srcset="./main_hopeage_img/logo.webp 800w,
+        <source class="w-96 h-96 ps-14" type="image" srcset="./main_hopeage_img/logo.webp 800w, 
           ./main_hopeage_img/logo_500webp.webp 500w,
           ./main_hopeage_img/logo_300webp.webp 300w,
           " type="image/webp" alt="Mod's logo" loading="lazy" decoding="async" sizes="(max-width: 640px) 250px,
-          800px">
+          800px"> <!--Load highest quallity image for 800w 500w and 300w screen sizes-->
+        <!--End webp load-->
         <source class="w-96 h-96 ps-14" type="image" srcset="./main_hopeage_img/logo.png 800w,
         ./main_hopeage_img/logo_500.png 500w,
         ./main_hopeage_img/logo_300.png 300w,
         
         " type="image/png" alt="Mod's logo" loading="lazy" decoding="async" sizes="(max-width: 640px) 400px,
           800px">
+        <!--Load highest quallity image for 800w 500w and 300w screen sizes-->
+        <!--End png load-->
         <img class="w-96 h-96 ps-14" srcset="
-        ./main_hopeage_img/logo.png 800w,
+        ./main_hopeage_img/logo.png 800w, 
         ./main_hopeage_img/logo_500.png 500w,
         ./main_hopeage_img/logo_300.png 300w,
         " alt="Mod's logo" loading="lazy" decoding="async" sizes="(max-width: 640px) 400px,
         800px">
+        <!--Fall back-->
+        <!--Load highest quallity image for 800w 500w and 300w screen sizes-->
+        <!--End png load-->
       </picture>
       <div class="px-2 item-body ">
         <h1 class="text-2xl font-bold text-center text-orange-700"> About me</h1>
