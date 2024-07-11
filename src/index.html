@@ -36,52 +36,79 @@
 <body>
   <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <!-- Start navbar-->
+     
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+
         <img src="./main_hopeage_img/logo.webp" class="h-8" alt="Mod's logo" loading="eager" decoding="async" />
+
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ModMonster</span>
+
       </a>
+
       <button data-collapse-toggle="navbar-default" type="button"
         class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+
         aria-controls="navbar-default" aria-expanded="false" onclick="CheckNav()">
+
         <span class="sr-only">Open main menu</span>
+
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M1 1h15M1 7h15M1 13h15" />
         </svg>
+
       </button>
+
       <div class="hidden w-full md:block md:w-auto" id="nav-bars">
+
         <ul
           class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+
           <li>
             <a href="/"
               class="block px-3 py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
               aria-current="page">Home</a>
+
           </li>
+
           <li>
+
             <a href="#abt-me"
               class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+
           </li>
+
           <li>
+
             <a href="#socials"
               class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Socials</a>
           </li>
+
           <li>
+
             <a href="#points"
               class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Points</a>
           </li>
+
           <li>
+
             <a href="#"
               class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
           </li>
+
         </ul>
+
       </div>
+
     </div>
     <!-- End navbar-->
   </nav>
 
   <div class="inset-0 object-cover object-center text-center bg-fixed bg-center bg-no-repeat bg-cover pb-72 pt-72"
     style="background-image: url(./main_hopeage_img/hero_img.jpg);" id="parallax">
+
     <h1
       class="inset-0 text-6xl font-extrabold text-transparent bg-gradient-to-t from-amber-300 to-orange-600 bg-clip-text"
       id="mmparahero">
@@ -99,44 +126,62 @@
 
 
   <section class="bg-gray-100 " id="abt-me">
+
     <div class="flex py-2 content">
+
       <picture>
+
         <source class="w-96 h-96 ps-14" type="image" srcset="./main_hopeage_img/logo.webp 800w, 
           ./main_hopeage_img/logo_500webp.webp 500w,
           ./main_hopeage_img/logo_300webp.webp 300w,
           " type="image/webp" alt="Mod's logo" loading="lazy" decoding="async" sizes="(max-width: 640px) 250px,
           800px"> <!--Load highest quallity image for 800w 500w and 300w screen sizes-->
         <!--End webp load-->
+
+
         <source class="w-96 h-96 ps-14" type="image" srcset="./main_hopeage_img/logo.png 800w,
         ./main_hopeage_img/logo_500.png 500w,
         ./main_hopeage_img/logo_300.png 300w,
         
         " type="image/png" alt="Mod's logo" loading="lazy" decoding="async" sizes="(max-width: 640px) 400px,
           800px">
+
         <!--Load highest quallity image for 800w 500w and 300w screen sizes-->
         <!--End png load-->
+
         <img class="w-96 h-96 ps-14" srcset="
         ./main_hopeage_img/logo.png 800w, 
         ./main_hopeage_img/logo_500.png 500w,
         ./main_hopeage_img/logo_300.png 300w,
         " alt="Mod's logo" loading="lazy" decoding="async" sizes="(max-width: 640px) 400px,
         800px">
+
         <!--Fall back-->
         <!--Load highest quallity image for 800w 500w and 300w screen sizes-->
         <!--End png load-->
+
       </picture>
+
       <div class="px-2 item-body ">
+
         <h1 class="text-2xl font-bold text-center text-orange-700"> About me</h1>
+
         <p class="w-4/6 text-lg break-words ps-5 mt-10per">Hi there I'm nick, but I go by ModMonster online. I
           mainly develop half-working,
           half-baked Minecraft Mods in front of my viewers to get views</p>
+
         <p class="w-4/6 text-lg break-words ps-5 ">Sometimes I do this by coding and sometimes I just use Mcreator
+
         </p>
+
       </div>
+
     </div>
+
   </section>
 
   <section class="pb-32 bg-gray-100 mt-36" id="socials">
+
     <h1 class="pb-8 text-2xl font-bold text-center text-orange-700">My socials </h1>
 
     <!--Start fiv frid-->
@@ -146,82 +191,130 @@
       <!-- Start Card 1 -->
       <div
         class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200">
+
         <a href="https://www.youtube.com/@ModMonster">
+
           <img class="w-full h-2/5" src="./main_hopeage_img/mod_channel_banner.jpg" alt="Image of Mod's channel banner"
-            loading="lazy" decoding="async">
+          loading="lazy" decoding="async">
+
           <div class="px-6 py-4">
+
             <div class="mb-2 text-xl font-bold">Youtube</div>
+
             <p class="text-base text-gray-700">
+
               This is where I sometimes post youtube videos and do my livestream every Monday.
               I also have some old tutorials I made for Mcreator if you want to check that out.
 
             </p>
+
           </div>
+
         </a>
+
       </div>
       <!-- End Card 1 -->
 
       <!-- Start Card 2 -->
       <div
         class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200">
+
         <a href="https://x.com/modmonster2060" aria-describedby="Twitter" aria-details="Mod's Twitter account">
+
           <img class="w-full h-2/5" src="./main_hopeage_img/twitter_card_s.png" alt="Mod's twitter post" loading="lazy"
             decoding="async">
+
           <div class="px-6 py-4">
+
             <div class="mb-2 text-xl font-bold">Twitter</div>
+
             <p class="text-base text-gray-700">
+
               I'm not active on there, sometimes I tweet when I feel like.
+
             </p>
+
           </div>
+
         </a>
+
       </div>
       <!-- End Card 2 -->
 
       <!-- Start Card 3 -->
       <div
         class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200">
+
         <a href="https://discord.com/invite/45tjuM8">
+
           <img class="w-full h-2/5 " src="./main_hopeage_img/discord_card_s.png" alt="Mod's invite server page"
             loading="lazy" decoding="async">
+
           <div class="px-6 py-4">
+
             <div class="mb-2 text-xl font-bold">Discord</div>
+
             <p class="text-base text-gray-700">
+
               You can talk on it, you can type on it. Its a discord server. Sometimes I come along and chat.
+
             </p>
+
           </div>
+
         </a>
+
       </div>
       <!-- End Card 3 -->
 
       <!-- Start Card 4 -->
       <div
         class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200">
+
         <a href="https://www.twitch.tv/modmonster2060">
+
           <img class="w-full h-2/5" src="./main_hopeage_img/twitch_card_social.webp" alt="Sunset in the mountains"
             loading="lazy" decoding="async">
+
           <div class="px-6 py-4">
+
             <div class="mb-2 text-xl font-bold">Twitch</div>
+
             <p class="text-base text-gray-700">
               Its alive, I think.
             </p>
+
           </div>
+
         </a>
+
       </div>
+
       <!-- End Card 4 -->
 
       <!-- Start Card 5 -->
       <div
         class="max-w-sm overflow-hidden transition-all rounded shadow-lg hover:bg-gradient-to-r from-amber-100 to-purple-200">
+
         <a href="https://www.twitch.tv/modmonster2060">
+
           <img class="w-full h-2/5" src="./main_hopeage_img/twitch_card_social.webp" alt="Sunset in the mountains"
             loading="lazy" decoding="async">
+
           <div class="px-6 py-4">
+
             <div class="mb-2 text-xl font-bold">Email</div>
+
             <p class="text-base text-gray-700">
+
               Its email.
+
             </p>
+
           </div>
+
         </a>
+
       </div>
       <!-- End Card 5 -->
 
@@ -255,10 +348,12 @@
 
   <br><br><br><br><br><br><br><br><br><br><br><br><br>
   <footer class="text-center bg-black">
+
     <p class="italic text-white ">Copyright
       <script defer> var cd = new Date().getFullYear(); document.write(cd); </script> ModMonster. All rights reserved.
       <a class="text-blue-600 dark:text-blue-400 hover:underline" href="./main_hopeage_img/scarycopyright.png"> Copy or
         modmonsterslawyer will come after you</a>
+
     </p>
 
 
