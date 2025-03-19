@@ -1,3 +1,0 @@
-echo I assume mod has node.js so surely this won't fail...
-echo Please also install Tailwind CSS IntelliSense and Headwind for VSCODE.
-npm install -D tailwindcss
