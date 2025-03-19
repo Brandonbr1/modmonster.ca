@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="5; url=https://www.twitch.tv/modmonster2060">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting To Youtube</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h1>Redirecting</h1>
+
+<p>You will be redirected to <a href="https://www.twitch.tv/modmonster2060">https://www.twitch.tv/modmonster2060</a>  </p>
+
+<p id="timer"></p>
+
+    
+</body>
+<script>
+    const timere = document.getElementById('timer');
+    var timer = 6;
+    function TimerDown() {
+        timer--
+        timere.innerHTML = timer;
+    }
+
+    setInterval(TimerDown, 1000);
+
+
+
+    // run it auto
+    document.addEventListener("DOMContentLoaded", () => {
+        TimerDown();
+    })
+</script>
+</html>
