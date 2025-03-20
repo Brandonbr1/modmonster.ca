@@ -1,4 +1,4 @@
-const urlsToCache = ["/", "app.js", "styles.css", "logo.svg"];
+const urlsToCache = ["/", "index.html", "style.css", "lo.png", "hero_img.jpg"];
 self.addEventListener("install", (event) => {
    let cacheUrls = async () => {
       const cache = await caches.open("mod-assets");

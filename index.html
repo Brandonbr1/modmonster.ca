@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html lang="en">
 <head>
     <style>
+        /** Basic styles setting inital stuff **/
+        :root {
+            --selection-color: red;
+            --selection-color-bg: orange;
+            --mob-p-font-size: 1.25rem;
+            --mob-lihei1: 1;
+            --mob-lihei2: 2rem;
+            --mob-h1-size: 1.5rem;
+        }
         body {
             background: var(--bg);
             margin: 0;
@@ -11,29 +19,44 @@
             color: var(--txtc);
             font-family: sans-serif;
         }
+        p {
+            font-size: var(--mob-p-font-size);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        ::selection {
+            background: var(--selection-color-bg);
+            color: var(--selection-color);
+        }
         body.dark {
-            --bg: linear-gradient(to right, #1b1e1f, #191c1e, #181d21); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            --txtc: white;
+            --bg: linear-gradient(to right, #1b1e1f, #191c1e, #181d21); 
+            --bg-hov: #0a1a1e;
             --txtatf: white;
             --navc: #101415;
+            --txtc: white;
+            --current-c: #373737;
         }
         body.light {
-            --bg: linear-gradient(to right, #989a9a, #babcbc, #bfc2c2); /* Don't deserve good color's as the black website. W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            --bg: linear-gradient(to right, #989a9a, #babcbc, #bfc2c2); 
+            --bg-hov: #828a8a;
             --txtc: black;
             --txtatf: white;
-            --navc: #b4b0b0
+            --navc: #b4b0b0;
+            --current-c: #bbc0c0;
         }
-        /** End Styles for White **/
-        p {
-            font-size: 1.25rem;
-        }
+         /** Basic styles setting inital stuff End**/
+
+
+        /** Above the Fold Stuff **/
+        
         #info-hero {
-            color: var(--txtatf);
+           color: var(--txtatf);
            margin: 15px; 
         }
         #herotxt {
             font-size: 2.75rem;
-            line-height: 1;
+            line-height: var(--mob-lihei1);
             color: var(--txtatf);
         }
         .heroimg {
@@ -46,31 +69,23 @@
             background-size: cover;
             padding-top: 0.15px;
         }
+        /** Above the Fold Stuff End **/
+        .themeswitcher {
+            position: fixed;
+            top: 50%;
+            background-color: var(--current-c);
+        }
         .h1-style {
             color: var(--txtc);
-            font-size: 1.5rem;
-            line-height: 2rem
-        }
-        .socal-ele {
-            transition: 0.4s ease;
-            transform: scale(1);
-        }
-        .socal-ele:hover {
-            transition: 0.4s ease;
-            transform: scale(1.25);
-        }
-        html {
-            scroll-behavior: smooth;
+            font-size: var(--mob-h1-size);
+            line-height: var(--mob-lihei2);
         }
         footer {
             margin-top: 15%;
             color: var(--txtc);
             background-color: var(--navc);
         }
-        ::selection {
-            background: rgba(255, 141, 35, 1);
-            color: red;
-        }
+        /** Navbar **/
         .topnav {
             overflow: hidden;
             background-color: var(--navc);
@@ -79,7 +94,11 @@
             font-weight: bold;
             padding: 15px;
             display: block;
-            float: none; /** inital or left for desktop **/
+            float: none;
+        }
+
+        .topnav a.current {
+            background-color: var(--current-c);
         }
 
         .topnav a:not(:first-child) {display: none;}
@@ -94,35 +113,71 @@
             right: 0;
             top: 0;
         }
-        .topnav.responsive a {
+        .topnav.extended a {
             display: block;
         }
+        /** NavBar End **/
 
+        /** Animation **/
+        .hide-fade {
+            opacity: 0.1;
+            transition: all 1.5s;
+        }
+        .fade {
+            opacity: 1;
+            transition: all 1.5s;
+        }
+        .scale-hidden {
+            transform: scale(2.25);
+            filter: blur(4px);
+            transition: all 0.95s;
+        }
+        .scale {
+            transform: scale(1);
+            filter: blur(0);
+            transition: all 0.95s;
+        }
 
-        /** Styles for Desktop, as it is mobile 1st **/
-        @media only screen and (min-width: 992px) {
-            .topnav a {
-            font-weight: bold;
+        @media (prefers-reduced-motion) {
+        .scale-hidden {
+            transition: all 0.95s;
+        }
+        .hide-fade {
+            transition: all 1.5s;
+        }
+}
+
+        /** Styles for Desktop and laptops, as it is mobile first website **/
+        @media only screen and (min-width: 700px) {
+        .topnav a {
             padding: 15px;
-            display: inline;
-            float: left; /** inital or left for desktop **/
+            margin-left: 45px;
+            display: inline-block;
+            float: none; 
         }
 
         .topnav a:not(:first-child) {
-            display: inline;
+            display: inline-block;
         }
 
         .topnav a:hover {
-            background-color: #0a1a1e;
+            background-color: var(--bg-hov);
         }
-        .topnav .icon {
+        .topnav .icon, .topnav a.icon {
             display: none;
         }
-        .topnav a.icon {
-            display: none;
+        .socal-ele {
+            transition: 0.4s ease;
+            transform: scale(1);
+        }
+        .socal-ele:hover {
+            transition: 0.4s ease;
+            transform: scale(1.25);
+        }
+        .heroimg {
+            min-height: 600px;
         }
             
-
         }
     </style>
     <meta charset="UTF-8">
@@ -132,14 +187,14 @@
     <title>ModMonster</title>
 </head>
 
-<body class="light">
+<body class="dark">
     <div class="topnav" id="nav-bar">
-        <a href="#home">Home</a>
-        <a href="./links/discord.html">Discord</a>
+        <a class="current" href="./">Home</a>
+        <a  href="https://shop.modmonster.ca/">Merch Store</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-        <a href="javascript:void(0);" class="icon" onclick="CheckNavBar()">
-            <i class="fa fa-bars"></i>
+        <a  href="javascript:void(0);" class="icon" onclick="CheckNavBar()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
           </a>
       </div>
 
@@ -151,13 +206,13 @@
             <p id="info-hero">Hi I'm Mod. I'm a livestreamer, and mod can modify the text if he needs to</p>
             <div class="social-block">
                 <a href="./links/youtube.html">
-                    <svg class="socal-ele" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 623" width="64" height="64"><style>.a{fill:#f00}</style><path class="a" d="m611.7 179.1c-6.3-23.7-24.8-42.3-48.3-48.6-42.6-11.5-213.4-11.5-213.4-11.5 0 0-170.8 0-213.4 11.5-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3 0 0 0 89.4 11.4 132.3 6.3 23.7 24.8 41.5 48.3 47.8 42.6 11.5 213.4 11.5 213.4 11.5 0 0 170.8 0 213.4-11.5 23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3 0 0 0-89.4-11.4-132.3zm-317.5 213.5v-162.4l142.7 81.2z"/></svg>
+                    <svg class="socal-ele scale-hidden" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 623" width="64" height="64"><style>.a{fill:#f00}</style><path class="a" d="m611.7 179.1c-6.3-23.7-24.8-42.3-48.3-48.6-42.6-11.5-213.4-11.5-213.4-11.5 0 0-170.8 0-213.4 11.5-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3 0 0 0 89.4 11.4 132.3 6.3 23.7 24.8 41.5 48.3 47.8 42.6 11.5 213.4 11.5 213.4 11.5 0 0 170.8 0 213.4-11.5 23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3 0 0 0-89.4-11.4-132.3zm-317.5 213.5v-162.4l142.7 81.2z"/></svg>
 </a>
             <a href="./links/twitch.html">
-                <svg class="socal-ele" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="64" height="64"><style>.twitch-svg{fill:#6441a5}</style><path class="twitch-svg" d="m120.8 0l-96.5 91.4v329.2h115.8v91.4l96.5-91.4h77.3l173.8-164.6v-256zm328.3 237.8l-77.2 73.1h-77.3l-67.6 64v-64h-86.9v-274.3h309zm-57.9-134.3h-38.7v109.7h38.6zm-106.2-0.5h-38.6v109.8h38.6z"/></svg>
+                <svg class="socal-ele scale-hidden" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="64" height="64"><style>.twitch-svg{fill:#6441a5}</style><path class="twitch-svg" d="m120.8 0l-96.5 91.4v329.2h115.8v91.4l96.5-91.4h77.3l173.8-164.6v-256zm328.3 237.8l-77.2 73.1h-77.3l-67.6 64v-64h-86.9v-274.3h309zm-57.9-134.3h-38.7v109.7h38.6zm-106.2-0.5h-38.6v109.8h38.6z"/></svg>
             </a>
             <a href="./links/discord.html">
-                <svg class="socal-ele" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="64" height="64"><style>.discordsvg{fill:#5865f2}</style><path class="discordsvg" d="m524.5 69.8q-0.1-0.1-0.1-0.2-0.1-0.1-0.2-0.2-0.1-0.1-0.3-0.2-0.1-0.1-0.2-0.1-14.3-6.5-28.9-12.2-14.7-5.6-29.7-10.2-15-4.7-30.3-8.3-15.2-3.7-30.7-6.4-0.3-0.1-0.6 0-0.2 0-0.5 0.1-0.3 0.2-0.5 0.4-0.2 0.2-0.3 0.4-2.1 3.7-4 7.5-2 3.8-3.8 7.6-1.9 3.8-3.7 7.7-1.7 3.9-3.4 7.8-16.7-2.5-33.5-3.8-16.8-1.3-33.7-1.3-16.9 0-33.7 1.3-16.8 1.3-33.5 3.8-1.7-3.9-3.5-7.8-1.7-3.9-3.6-7.7-1.9-3.8-3.9-7.6-2-3.8-4.1-7.5-0.1-0.2-0.4-0.4-0.2-0.2-0.4-0.3-0.3-0.2-0.5-0.2-0.3 0-0.6 0-15.5 2.7-30.8 6.3-15.3 3.7-30.3 8.4-15 4.6-29.7 10.2-14.7 5.6-29 12.2-0.1 0.1-0.2 0.1-0.2 0.1-0.3 0.2-0.1 0.1-0.1 0.2-0.1 0.1-0.2 0.2c-76.2 113.9-97.1 224.9-86.9 334.6q0 0.2 0.1 0.4 0 0.2 0.2 0.4 0.1 0.2 0.2 0.3 0.1 0.2 0.3 0.3 16.6 12.3 34.2 23.1 17.6 10.9 36.1 20.2 18.4 9.3 37.6 17 19.1 7.7 38.9 13.8 0.3 0.1 0.6 0.1 0.3 0 0.6-0.1 0.2-0.1 0.5-0.3 0.2-0.2 0.4-0.4 4.2-5.8 8.2-11.7 4.1-6 7.8-12.1 3.8-6.1 7.3-12.3 3.5-6.3 6.7-12.7 0.2-0.4 0.2-0.8 0-0.3-0.1-0.7-0.2-0.4-0.5-0.7-0.2-0.3-0.6-0.4-5.9-2.3-11.8-4.8-5.8-2.5-11.6-5.2-5.7-2.8-11.4-5.7-5.6-3-11.1-6.2-0.4-0.2-0.6-0.6-0.3-0.4-0.3-0.9 0-0.5 0.2-0.9 0.1-0.4 0.5-0.7c3.1-2.3 6.2-4.7 9.1-7.1q0.2-0.2 0.4-0.3 0.3-0.1 0.5-0.1 0.3-0.1 0.5 0 0.3 0 0.5 0.1c96.2 43.9 200.4 43.9 295.5 0q0.2-0.1 0.5-0.2 0.2 0 0.5 0 0.2 0.1 0.5 0.1 0.2 0.1 0.4 0.3c2.9 2.4 6 4.9 9.1 7.2q0.4 0.3 0.5 0.7 0.2 0.4 0.2 0.9 0 0.5-0.3 0.9-0.2 0.4-0.6 0.6-5.5 3.2-11.1 6.2-5.6 2.9-11.4 5.7-5.7 2.7-11.6 5.2-5.8 2.5-11.8 4.7-0.4 0.1-0.6 0.4-0.3 0.3-0.5 0.7-0.1 0.4-0.1 0.7 0 0.4 0.2 0.8 3.3 6.4 6.8 12.6 3.6 6.2 7.3 12.3 3.8 6.2 7.7 12.1 4 6 8.2 11.8 0.2 0.2 0.4 0.4 0.3 0.2 0.5 0.3 0.3 0.1 0.6 0.1 0.3 0 0.6-0.1 19.8-6 39-13.7 19.3-7.8 37.8-17.1 18.5-9.3 36.1-20.1 17.6-10.9 34.3-23.2 0.2-0.1 0.3-0.3 0.2-0.1 0.3-0.3 0.1-0.2 0.1-0.4 0.1-0.2 0.1-0.4c12.2-126.7-20.6-236.8-87-334.5zm-302 267.8c-29 0-52.8-26.6-52.8-59.2 0-32.6 23.4-59.3 52.8-59.3 29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.3-52.8 59.3zm195.4 0c-29 0-52.8-26.6-52.8-59.2 0-32.6 23.3-59.3 52.8-59.3 29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.3-52.8 59.3z"/></svg>
+                <svg class="socal-ele scale-hidden" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="64" height="64"><style>.discordsvg{fill:#5865f2}</style><path class="discordsvg" d="m524.5 69.8q-0.1-0.1-0.1-0.2-0.1-0.1-0.2-0.2-0.1-0.1-0.3-0.2-0.1-0.1-0.2-0.1-14.3-6.5-28.9-12.2-14.7-5.6-29.7-10.2-15-4.7-30.3-8.3-15.2-3.7-30.7-6.4-0.3-0.1-0.6 0-0.2 0-0.5 0.1-0.3 0.2-0.5 0.4-0.2 0.2-0.3 0.4-2.1 3.7-4 7.5-2 3.8-3.8 7.6-1.9 3.8-3.7 7.7-1.7 3.9-3.4 7.8-16.7-2.5-33.5-3.8-16.8-1.3-33.7-1.3-16.9 0-33.7 1.3-16.8 1.3-33.5 3.8-1.7-3.9-3.5-7.8-1.7-3.9-3.6-7.7-1.9-3.8-3.9-7.6-2-3.8-4.1-7.5-0.1-0.2-0.4-0.4-0.2-0.2-0.4-0.3-0.3-0.2-0.5-0.2-0.3 0-0.6 0-15.5 2.7-30.8 6.3-15.3 3.7-30.3 8.4-15 4.6-29.7 10.2-14.7 5.6-29 12.2-0.1 0.1-0.2 0.1-0.2 0.1-0.3 0.2-0.1 0.1-0.1 0.2-0.1 0.1-0.2 0.2c-76.2 113.9-97.1 224.9-86.9 334.6q0 0.2 0.1 0.4 0 0.2 0.2 0.4 0.1 0.2 0.2 0.3 0.1 0.2 0.3 0.3 16.6 12.3 34.2 23.1 17.6 10.9 36.1 20.2 18.4 9.3 37.6 17 19.1 7.7 38.9 13.8 0.3 0.1 0.6 0.1 0.3 0 0.6-0.1 0.2-0.1 0.5-0.3 0.2-0.2 0.4-0.4 4.2-5.8 8.2-11.7 4.1-6 7.8-12.1 3.8-6.1 7.3-12.3 3.5-6.3 6.7-12.7 0.2-0.4 0.2-0.8 0-0.3-0.1-0.7-0.2-0.4-0.5-0.7-0.2-0.3-0.6-0.4-5.9-2.3-11.8-4.8-5.8-2.5-11.6-5.2-5.7-2.8-11.4-5.7-5.6-3-11.1-6.2-0.4-0.2-0.6-0.6-0.3-0.4-0.3-0.9 0-0.5 0.2-0.9 0.1-0.4 0.5-0.7c3.1-2.3 6.2-4.7 9.1-7.1q0.2-0.2 0.4-0.3 0.3-0.1 0.5-0.1 0.3-0.1 0.5 0 0.3 0 0.5 0.1c96.2 43.9 200.4 43.9 295.5 0q0.2-0.1 0.5-0.2 0.2 0 0.5 0 0.2 0.1 0.5 0.1 0.2 0.1 0.4 0.3c2.9 2.4 6 4.9 9.1 7.2q0.4 0.3 0.5 0.7 0.2 0.4 0.2 0.9 0 0.5-0.3 0.9-0.2 0.4-0.6 0.6-5.5 3.2-11.1 6.2-5.6 2.9-11.4 5.7-5.7 2.7-11.6 5.2-5.8 2.5-11.8 4.7-0.4 0.1-0.6 0.4-0.3 0.3-0.5 0.7-0.1 0.4-0.1 0.7 0 0.4 0.2 0.8 3.3 6.4 6.8 12.6 3.6 6.2 7.3 12.3 3.8 6.2 7.7 12.1 4 6 8.2 11.8 0.2 0.2 0.4 0.4 0.3 0.2 0.5 0.3 0.3 0.1 0.6 0.1 0.3 0 0.6-0.1 19.8-6 39-13.7 19.3-7.8 37.8-17.1 18.5-9.3 36.1-20.1 17.6-10.9 34.3-23.2 0.2-0.1 0.3-0.3 0.2-0.1 0.3-0.3 0.1-0.2 0.1-0.4 0.1-0.2 0.1-0.4c12.2-126.7-20.6-236.8-87-334.5zm-302 267.8c-29 0-52.8-26.6-52.8-59.2 0-32.6 23.4-59.3 52.8-59.3 29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.3-52.8 59.3zm195.4 0c-29 0-52.8-26.6-52.8-59.2 0-32.6 23.3-59.3 52.8-59.3 29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.3-52.8 59.3z"/></svg>
             </a>
             </div>
 
@@ -166,12 +221,14 @@
 
 
     <div class="themeswitcher">
-        
+        <a href="javascript:void(0);" class="icon" onclick="ChangeTheme()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="64" height="64"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+          </a>
     </div>
 
 
-    <section>
-        <img src="./lo.png" alt="">
+    <section class="information">
+        <img src="./lo.png" alt="Mod Monster Logo" loading="eager">
         <h1 class="h1-style">About</h1>
         <p>Mod, add text here.</p>
     </section>
@@ -184,21 +241,23 @@
 </div>
 
 </body>
-<script async>
+<script defer>
     var getyear = new Date().getFullYear();
     document.getElementById('datecp').innerHTML = getyear
    
     function CheckNavBar() {
         var navbar = document.getElementById('nav-bar')
         if (navbar.className === "topnav") {
-           navbar.classList.add("responsive"); // adds resposive class
+           navbar.classList.add("extended"); // adds resposive class
         } else {
             navbar.className = "topnav" // replaces it 
         }
     
     }
+
+    var themeselector = document.body;
     function ChangeTheme() {
-        var themeselector = document.body;
+        var getclassname = themeselector.className;
         if(themeselector.className === 'dark') 
         {
             themeselector.className = 'light'
@@ -207,15 +266,56 @@
         {
             themeselector.className = 'dark'
         }
-        var getclassname = themeselector.className;
+        
         localStorage.getItem("theme");
         localStorage.setItem("theme", getclassname)
         console.log(localStorage.getItem("theme", getclassname))
     }
 
+    document.addEventListener("loadstart", () => {
+        var getclassname = themeselector.className;
+        if (localStorage.getItem('theme') === null || '' || "") {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) 
+            {
+                localStorage.getItem("theme");
+                localStorage.setItem("theme", "dark")
+            }
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) 
+             {
+                localStorage.setItem("theme", "light")
+            } else 
+            {
+                localStorage.getItem("theme");
+                localStorage.setItem("theme", 'light');
+                themeselector.className = 'light';
+            }
+        } 
+        if (localStorage.getItem('theme') === "dark") 
+        {
+            themeselector.className = 'light'
+        } 
+        if (localStorage.getItem('theme') === "light") 
+        {
+            themeselector.className = 'dark'
+        }   
+        
+    })
+
     if ('serviceWorker' in navigator) {
-   navigator.serviceWorker.register("/sw.js");
+   navigator.serviceWorker.register("sw.js");
 }
+
+const observer = new IntersectionObserver(enties => {
+    enties.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('scale')
+        }
+    });
+});
+
+const animationelements = document.querySelectorAll('.scale-hidden');
+animationelements.forEach(el => observer.observe(el))
+
 
 
 </script>
